@@ -8,4 +8,4 @@ envsubst < application.properties.dist > application.properties
 rm application.properties.dist
 
 # Go!
-java -XX:MaxPermSize=128m -Xmx1024m -jar webapp.jar
+exec java -XX:MaxPermSize=128m -Xmx1024m -jar webapp.jar
