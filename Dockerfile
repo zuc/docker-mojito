@@ -11,8 +11,8 @@ RUN mkdir -p /opt/mojito && \
     curl -L https://github.com/box/mojito/releases/download/v${MOJITO_VERSION}/mojito-webapp-${MOJITO_VERSION}.jar > /opt/mojito/webapp.jar
 
 COPY application.properties.dist /opt/mojito/
-COPY docker-entrypoint.sh /opt/
+COPY mojito-webapp.sh /opt/
 
 EXPOSE 8080
 
-CMD ["/opt/docker-entrypoint.sh"]
+CMD ["/opt/mojito-webapp.sh"]
