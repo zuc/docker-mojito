@@ -15,4 +15,4 @@ COPY docker-entrypoint.sh /opt/
 
 EXPOSE 8080
 
-ENTRYPOINT ["/opt/docker-entrypoint.sh"]
+CMD ["/opt/docker-entrypoint.sh"]
