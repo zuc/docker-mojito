@@ -1,0 +1,6 @@
+l10n.resttemplate.host=${MOJITO_API_HOST}
+l10n.resttemplate.port=${MOJITO_API_PORT}
+l10n.resttemplate.scheme=${MOJITO_API_SCHEME}
+l10n.resttemplate.authentication.credentialProvider=CONFIG
+l10n.resttemplate.authentication.username=${MOJITO_API_USER}
+l10n.resttemplate.authentication.password=${MOJITO_API_PASS}
