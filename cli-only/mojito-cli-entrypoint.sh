@@ -8,4 +8,4 @@ envsubst < application.properties.dist > application.properties
 rm application.properties.dist
 
 # Go!
-java -jar cli.jar
+exec java -jar cli.jar $@

@@ -10,6 +10,6 @@ RUN mkdir -p /opt/mojito && \
     curl -L https://github.com/box/mojito/releases/download/v${MOJITO_VERSION}/mojito-cli-${MOJITO_VERSION}.jar > /opt/mojito/cli.jar
 
 COPY application.properties.dist /opt/mojito/
-COPY mojito-cli.sh /opt/
+COPY mojito-cli-entrypoint.sh /opt/
 
-ENTRYPOINT ["/opt/mojito-cli.sh"]
+ENTRYPOINT ["/opt/mojito-cli-entrypoint.sh"]
