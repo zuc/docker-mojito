@@ -9,4 +9,4 @@ rm application.properties.dist
 
 # Go!
 mkdir -p /opt/mojito/workdir && cd /opt/mojito/workdir
-exec java -jar /opt/mojito/cli.jar $@
+exec java -jar /opt/mojito/cli.jar $@ --spring.config.location=/opt/mojito/application.properties
