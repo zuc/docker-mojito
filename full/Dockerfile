@@ -1,7 +1,7 @@
 FROM java:8-jre
 LABEL maintainer="michele@zuccala.com"
 
-ENV MOJITO_VERSION 0.83
+ENV MOJITO_VERSION 0.89
 
 RUN apt-get update && \
     apt-get install -y curl gettext-base
