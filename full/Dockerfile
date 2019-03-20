@@ -13,6 +13,12 @@ LABEL maintainer="michele@zuccala.com"
 COPY --from=build /tmp/cli.jar /opt/mojito/cli.jar
 COPY --from=build /tmp/cli.jar /opt/mojito/webapp.jar
 
+RUN \
+  apt-get update \
+  && apt-get -y install gettext-base \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
 COPY application.properties.dist /opt/mojito/
 COPY mojito-webapp-launcher.sh /opt/
 
