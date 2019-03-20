@@ -11,7 +11,7 @@ FROM java:8-jre as production
 LABEL maintainer="michele@zuccala.com"
 
 COPY --from=build /tmp/cli.jar /opt/mojito/cli.jar
-COPY --from=build /tmp/cli.jar /opt/mojito/webapp.jar
+COPY --from=build /tmp/webapp.jar /opt/mojito/webapp.jar
 
 RUN \
   apt-get update \
