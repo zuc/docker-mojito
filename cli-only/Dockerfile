@@ -4,19 +4,14 @@ ENV MOJITO_VERSION 0.96
 
 RUN curl -L https://github.com/box/mojito/releases/download/v${MOJITO_VERSION}/mojito-cli-${MOJITO_VERSION}.jar > /tmp/cli.jar
 
-FROM java:8-jre
+FROM openjdk:8-jre as production
 
 LABEL maintainer="michele@zuccala.com"
 
 COPY --from=0 /tmp/cli.jar /opt/mojito/cli.jar
 
-RUN \
-  apt-get update \
-  && apt-get -y install gettext-base \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+COPY application.properties /opt/mojito/
 
-COPY application.properties.dist /opt/mojito/
-COPY mojito-cli-entrypoint.sh /opt/
+ENV SPRING_CONFIG_LOCATION "/opt/mojito/application.properties"
 
-ENTRYPOINT ["/opt/mojito-cli-entrypoint.sh"]
+ENTRYPOINT [ "java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Xmx1024m", "-jar", "/opt/mojito/cli.jar" ]
