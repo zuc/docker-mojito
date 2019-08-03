@@ -1,6 +1,6 @@
 FROM tutum/curl:alpine
 
-ENV MOJITO_VERSION 0.98
+ENV MOJITO_VERSION 0.99
 
 RUN curl -L https://github.com/box/mojito/releases/download/v${MOJITO_VERSION}/mojito-cli-${MOJITO_VERSION}.jar > /tmp/cli.jar
 
